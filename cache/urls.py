@@ -16,7 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from polls.views import QuestionDetailView, QuestionList
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('__debug__/', include('debug_toolbar.urls')),
+    path('polls/<int:id>/', QuestionDetailView.as_view()),
+    path('polls/list/', QuestionList.as_view()),
 ]
