@@ -1,5 +1,9 @@
+{% extends 'polls/base.html' %}
 {% load polls %}
 
+
+{% block content %}
 <p>Опрос: {{ object.name }}</p>
 <p>Вопрос 1: {% question id=1%}</p>
 <!--<p>Вопрос 2: {% question id=2%}</p>-->
+{% endblock %}

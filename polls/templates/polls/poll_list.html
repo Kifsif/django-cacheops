@@ -2,8 +2,8 @@
 
 {% block content %}
 <ul>
-{% for question in object_list %}
-    <li>{{ question }}</li>
+{% for poll in object_list %}
+    <li><a href="{{ poll.get_absolute_url }}">{{ poll }}</a></li>
 {% endfor %}
 </ul>
 {% endblock %}

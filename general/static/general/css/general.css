@@ -1,0 +1,14 @@
+td {
+    border: 1px solid;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.error, .errorlist {
+    color: red;
+}
+
+.declaration > .paragraph-text::before {
+    content: '\2295';
+    color: red;
+}

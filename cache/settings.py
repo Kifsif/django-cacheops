@@ -29,6 +29,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'clearcache',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -36,8 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     "debug_toolbar",
     'django.contrib.staticfiles',
-    'cachalot'
+    'cachalot',
     'polls',
+    'general',
 ]
 
 MIDDLEWARE = [
@@ -126,20 +128,14 @@ CACHES = {
         "LOCATION": "redis://127.0.0.1:6379/1",
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
-        }
+        },
+        'TIMEOUT': None,
     }
-}
-
-CACHEOPS_REDIS = {
-    'host': 'localhost',  # redis-server is on same machine
-    'port': 6379,  # default redis port
-    'socket_timeout': 3,  # connection timeout in seconds, optional
 }
 
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
-
 
 DEBUG_TOOLBAR_PANELS = [
     'debug_toolbar.panels.history.HistoryPanel',
@@ -156,4 +152,5 @@ DEBUG_TOOLBAR_PANELS = [
     'debug_toolbar.panels.logging.LoggingPanel',
     'debug_toolbar.panels.redirects.RedirectsPanel',
     'debug_toolbar.panels.profiling.ProfilingPanel',
+    'cachalot.panels.CachalotPanel',
 ]

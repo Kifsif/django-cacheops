@@ -19,10 +19,11 @@ from django.urls import path, include
 from polls.views import QuestionDetailView, QuestionList, PollList, PollDetailView
 
 urlpatterns = [
+    path('admin/clearcache/', include('clearcache.urls')),
     path('admin/', admin.site.urls),
     path('__debug__/', include('debug_toolbar.urls')),
-    path('questions/<int:pk>/', QuestionDetailView.as_view()),
-    path('questions/list/', QuestionList.as_view()),
-    path('polls/<int:pk>/', PollDetailView.as_view()),
-    path('polls/list/', PollList.as_view()),
+    path('questions/<int:pk>/', QuestionDetailView.as_view(), name="question"),
+    path('questions/list/', QuestionList.as_view(), name="question_list"),
+    path('polls/<int:pk>/', PollDetailView.as_view(), name="poll"),
+    path('polls/list/', PollList.as_view(), name="polls_list"),
 ]

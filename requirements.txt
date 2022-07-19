@@ -1,0 +1,6 @@
+Django==4.0.6
+django-cachalot==2.5.1
+django-clearcache==1.2.1
+django-debug-toolbar==3.5.0
+django-redis==5.2.0
+redis==4.3.4
